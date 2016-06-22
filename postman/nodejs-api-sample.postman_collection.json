@@ -1,0 +1,237 @@
+{
+	"id": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+	"name": "nodejs-api-sample",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "46e1f232-f10c-f8cf-1254-57763b2f4f05",
+			"name": "Animals",
+			"description": "",
+			"order": [
+				"04c5db14-6110-251b-75ae-5855927e46da",
+				"6d6eaf33-e5bc-b347-a5d9-1163ff6c5a34",
+				"7adb8ba2-bf3b-49ad-2b51-ca46f9e9d2fe",
+				"76be96d7-913e-8c80-e00d-757263ee80f0"
+			],
+			"owner": 0,
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93"
+		},
+		{
+			"id": "fc87cf85-2f9e-5585-9e3b-d418096eccfe",
+			"name": "Farms",
+			"description": "",
+			"order": [
+				"63b3d3b8-c519-7733-fea5-daadd04559fc",
+				"878d0f0c-c6b1-5017-28d3-9ad5bbfc4693",
+				"e926327f-7f02-7640-16d2-3b6d822d08df",
+				"0ca7db7f-c1bb-3ba4-e4eb-c968d7c1e650"
+			],
+			"owner": 0
+		}
+	],
+	"timestamp": 1466601287348,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "04c5db14-6110-251b-75ae-5855927e46da",
+			"headers": "",
+			"url": "{{host}}/farms/{{farmId}}/animals",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1466612257235,
+			"name": "All Animals",
+			"description": "",
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+			"responses": []
+		},
+		{
+			"id": "0ca7db7f-c1bb-3ba4-e4eb-c968d7c1e650",
+			"headers": "",
+			"url": "{{host}}/farms/{{farmId}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1466612300921,
+			"name": "Delete farm",
+			"description": "",
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+			"responses": []
+		},
+		{
+			"id": "63b3d3b8-c519-7733-fea5-daadd04559fc",
+			"headers": "",
+			"url": "{{host}}/farms",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1466601594039,
+			"name": "Farms",
+			"description": "",
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+			"responses": []
+		},
+		{
+			"id": "6d6eaf33-e5bc-b347-a5d9-1163ff6c5a34",
+			"headers": "",
+			"url": "{{host}}/farms/{{farmId}}/animals",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Flower",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "params.animal",
+					"value": "pig",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "params.color",
+					"value": "black",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1466612593112,
+			"name": "Create Animal",
+			"description": "",
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+			"responses": []
+		},
+		{
+			"id": "76be96d7-913e-8c80-e00d-757263ee80f0",
+			"headers": "",
+			"url": "{{host}}/farms/{{farmId}}/animals/{{animalId}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1466612288838,
+			"name": "Delete Animal",
+			"description": "",
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+			"responses": []
+		},
+		{
+			"id": "7adb8ba2-bf3b-49ad-2b51-ca46f9e9d2fe",
+			"headers": "",
+			"url": "{{host}}/farms/{{farmId}}/animals/{{animalId}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Flaffy",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1466612281152,
+			"name": "Update Animal",
+			"description": "",
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+			"responses": []
+		},
+		{
+			"id": "878d0f0c-c6b1-5017-28d3-9ad5bbfc4693",
+			"headers": "",
+			"url": "{{host}}/farms",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+			"data": [
+				{
+					"key": "name",
+					"value": "Pigs",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "owner",
+					"value": "Boar",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "Create farm",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1466601734401,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "fc87cf85-2f9e-5585-9e3b-d418096eccfe"
+		},
+		{
+			"id": "e926327f-7f02-7640-16d2-3b6d822d08df",
+			"headers": "",
+			"url": "{{host}}/farms/{{farmId}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "owner",
+					"value": "Mr. Piglet",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1466612296496,
+			"name": "Update farm",
+			"description": "",
+			"collectionId": "6287b8d2-6420-3874-ffa7-ff5548796e93",
+			"responses": []
+		}
+	]
+}
