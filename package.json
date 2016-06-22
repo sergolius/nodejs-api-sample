@@ -4,7 +4,9 @@
   "description": "how to simple API nodejs+express+mongoDB",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.14.0"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.1"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
@@ -12,7 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "NODE_ENV=development nodemon server.js"
   },
   "repository": {
     "type": "git",
