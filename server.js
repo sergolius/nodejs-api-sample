@@ -5,13 +5,11 @@ var app = express();
 var config = require('./config');
 var models = require('./models');
 var routes = require('./routes');
-var routesFarms = require('./routes/farms');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use('/', routes);
-app.use('/farms', routesFarms);
+routes(app);
 
 // error handlers
 // catch 404 and forward to error handler

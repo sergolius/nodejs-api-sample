@@ -1,7 +1,7 @@
 var express = require('express')
   , router = express.Router();
 
-var model = require('../models/farms.js');
+var model = require('../models/farms');
 
 router.get('/', function (req, res, next) {
   model.find(function (err, data) {

@@ -5,11 +5,16 @@ var model = require('../models/animals');
 
 router.get('/', function (req, res, next) {
   var criteria = {
-    $and: [
-      {farm: req.farmId},
-      {params: req.query} // additional filter
-    ]
+    $and: [{farm: req.params.farmId}]
   };
+  var t = {};
+
+  var $and = Object.keys(req.query).map(function (key) {
+    t['params.' + key] = req.query[key];
+    return t;
+  });
+
+  Array.prototype.push.apply(criteria.$and, $and);
 
   model.find(criteria, function (err, data) {
     if (err) {
@@ -21,7 +26,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-  req.body.farm = req.farmId;
+  req.body.farm = req.params.farmId;
 
   model.create(req.body, function (err, data) {
     if (err) {
@@ -33,10 +38,7 @@ router.post('/', function (req, res, next) {
 });
 
 router.delete('/:animalId', function (req, res, next) {
-  model.remove({
-    _id: req.params.animalId,
-    farm: req.farmId
-  }, function (err, data) {
+  model.findByIdAndRemove(req.params.animalId, function (err, data) {
     if (err) {
       return next(err);
     }
@@ -48,7 +50,7 @@ router.delete('/:animalId', function (req, res, next) {
 router.get('/:animalId', function (req, res, next) {
   model.findOne({
     _id: req.params.animalId,
-    farm: req.farmId
+    farm: req.params.farmId
   }, function (err, data) {
     if (err) {
       return next(err);
@@ -61,7 +63,7 @@ router.get('/:animalId', function (req, res, next) {
 router.put('/:animalId', function (req, res, next) {
   model.update({
     _id: req.params.animalId,
-    farm: req.farmId
+    farm: req.params.farmId
   }, req.body, function (err, data) {
     if (err) {
       return next(err);

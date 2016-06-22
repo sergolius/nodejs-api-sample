@@ -1,8 +1,11 @@
-var express = require('express')
-  , router = express.Router();
+var mongoose = require('mongoose');
 
-router.get('/', function (req, res) {
-  res.send('Hello world');
-});
+module.exports = function (app) {
+  var routesSite = require('./site');
+  var routesFarms = require('./farms');
+  var routesAnimals = require('./animals');
 
-module.exports = router;
+  app.use('/', routesSite);
+  app.use('/farms', routesFarms);
+  app.use('/farms/:farmId/animals', routesAnimals);
+};

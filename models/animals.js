@@ -5,9 +5,9 @@ var schema = new mongoose.Schema({
   farm: {ref: 'farms', type: mongoose.Schema.ObjectId},
   name: String,
   params: {
-    color: String,
-    tail: String,
-    type: String
+    color: String, // black, red
+    tail: String, // long, short
+    animal: String // chicken, pig
   }
 });
 

@@ -12,3 +12,11 @@ Nodemon, routing
 master_03
 ---------
 Config, mongoose. Farms routing.
+
+master_04
+---------
+Routes to separated file.
+Param: "farmId".
+New farms routing: animals.
+Model: animals.
+Filter animals by "params".
