@@ -20,3 +20,7 @@ Param: "farmId".
 New farms routing: animals.
 Model: animals.
 Filter animals by "params".
+
+master_05
+---------
+Dockerize

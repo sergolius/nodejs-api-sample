@@ -1,0 +1,43 @@
+---
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:3.6.5
+    container_name: mongodb
+    environment:
+      MONGO_DATA_DIR: /data/db
+      MONGO_LOG_DIR: /dev/null
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    networks:
+      - net
+    volumes:
+      - mongodb-data:/data/db
+
+  node:
+    build: .
+    command: npm start
+    container_name: nodejs-api-sample
+    environment:
+      MONGO_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      PORT: 3000
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+      - /app/node_modules # restore node_modules
+    networks:
+      - net
+
+networks:
+  net:
+volumes:
+  mongodb-data:
