@@ -31,13 +31,14 @@ services:
       - 3000:3000
     depends_on:
       - mongodb
+    networks:
+      - net
     volumes:
       - .:/app
       - /app/node_modules # restore node_modules
-    networks:
-      - net
 
 networks:
   net:
 volumes:
   mongodb-data:
+    driver: local
